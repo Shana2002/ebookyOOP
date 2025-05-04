@@ -14,4 +14,19 @@ public class HomeController {
     public String shop(){
         return "shop";
     }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
+
+    @GetMapping("/contactus")
+    public String contact(){
+        return "contact";
+    }
+
+    @GetMapping("/profile")
+    public String profile(){
+        return "profile";
+    }
 }

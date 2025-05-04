@@ -1,10 +1,1966 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xml:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>shop</title>
+    <link rel="stylesheet" th:href="@{/css/shop.css}">
+    <link rel="stylesheet" th:href="@{/css/nav.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+<div th:replace="fragment/header :: header"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="search-container">
+                <input type="text" class="form-control search-input"
+                       placeholder="Search...">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="category-nav">
+                <h3 class="mb-3">Browse Categories</h3>
+                <div class="category-scroller">
+                    <ul class="category-list nav">
+                        <li class="category-item nav-item">
+                            <a href="#popular"
+                               class="category-link nav-link active">Popular
+                                Books</a>
+                        </li>
+                        <li class="category-item nav-item">
+                            <a href="#featured"
+                               class="category-link nav-link">Featured
+                                Products</a>
+                        </li>
+                        <li class="category-item nav-item">
+                            <a href="#fiction"
+                               class="category-link nav-link">Fiction
+                                Books</a>
+                        </li>
+                        <li class="category-item nav-item">
+                            <a href="#scifi"
+                               class="category-link nav-link">Sci-Fi &
+                                Fantasy</a>
+                        </li>
+                        <li class="category-item nav-item">
+                            <a href="#mystery"
+                               class="category-link nav-link">Mystery &
+                                Thriller</a>
+                        </li>
+                        <li class="category-item nav-item">
+                            <a href="#nonfiction"
+                               class="category-link nav-link">Non-Fiction</a>
+                        </li>
+                        <li class="category-item nav-item">
+                            <a href="#classics"
+                               class="category-link nav-link">Classics</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt-4">
+    <!-- Popular Books Section -->
+    <section id="popular" class="category-section">
+        <div class="container">
+            <h2 class="section-title">Popular Books</h2>
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="position-relative">
+                                    <span
+                                            class="badge bg-primary position-absolute top-0 start-0 m-2">New</span>
+                            <img
+                                    src="https://prodimage.images-bn.com/pimages/9781118008188_p1_v2_s600x595.jpg"
+                                    class="card-img-top"
+                                    alt="Design and Build Websites">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Design and Build
+                                Websites</h5>
+                            <p class="text-muted">Web Development</p>
+                            <p class="text-muted">by Jon Duckett</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <div>
+                                            <span
+                                                    class="text-decoration-line-through text-muted">Rs
+                                                1049.99</span>
+                                    <h5 class="text-primary mb-0">Rs
+                                        999.99</h5>
+                                </div>
+                                <a
+                                        href="payment.html?title=Design+and+Build+Websites&author=Jon+Duckett&price=999.99&image=https://prodimage.images-bn.com/pimages/9781118008188_p1_v2_s600x595.jpg&category=Web+Development"
+                                        class="btn btn-primary">Add to
+                                    Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="position-relative">
+                                    <span
+                                            class="badge bg-primary position-absolute top-0 start-0 m-2">New</span>
+                            <img
+                                    src="https://img.ebook-hunter.org/img/Python%20for%20Data%20Analysis%2C%203rd%20Edition%20by%20Wes%20McKinney.jpg"
+                                    class="card-img-top"
+                                    alt="Python for Data Analysis">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Python for Data
+                                Analysis</h5>
+                            <p class="text-muted">Data Science and
+                                Machine Learning</p>
+                            <p class="text-muted">by Wes McKinney</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <div>
+                                            <span
+                                                    class="text-decoration-line-through text-muted">Rs
+                                                2399.99</span>
+                                    <h5 class="text-primary mb-0">Rs
+                                        1799.99</h5>
+                                </div>
+                                <a
+                                        href="payment.html?title=Python+for+Data+Analysis&author=Wes+McKinney&price=1799.99&image=https://img.ebook-hunter.org/img/Python%20for%20Data%20Analysis%2C%203rd%20Edition%20by%20Wes%20McKinney.jpg&category=Data+Science"
+                                        class="btn btn-primary">Add to
+                                    Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="position-relative">
+                                    <span
+                                            class="badge bg-primary position-absolute top-0 start-0 m-2">New</span>
+                            <img
+                                    src="https://bignerdranch.com/wp-content/uploads/2021/10/BNR_Android_5E_comp-copy-scaled.jpg"
+                                    class="card-img-top"
+                                    alt="Android Programming">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Android Programming:
+                                The Big Nerd Ranch Guide</h5>
+                            <p class="text-muted">Mobile App
+                                Development</p>
+                            <p class="text-muted">by Bill Phillips,
+                                Chris Stewart, and Kristin Marsicano</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <div>
+                                            <span
+                                                    class="text-decoration-line-through text-muted">Rs
+                                                5399.99</span>
+                                    <h5 class="text-primary mb-0">Rs
+                                        4799.99</h5>
+                                </div>
+                                <a
+                                        href="payment.html?title=Android+Programming&author=Bill+Phillips&price=4799.99&image=https://bignerdranch.com/wp-content/uploads/2021/10/BNR_Android_5E_comp-copy-scaled.jpg&category=Mobile+Development"
+                                        class="btn btn-primary">Add to
+                                    Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="featured" class="category-section">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="https://m.media-amazon.com/images/I/61efrLvvaxL.jpg"
+                                class="card-img-top"
+                                alt="Game Programming Patterns">
+                        <div class="card-body">
+                            <h5 class="card-title">Game Programming
+                                Patterns</h5>
+                            <p class="card-text">Game Programming
+                                Patterns is a book by Robert Nystrom
+                                that teaches game development concepts
+                                and design patterns. It covers topics
+                                like state machines, command patterns,
+                                and entity component systems.</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    459.99</h5>
+                                <a
+                                        href="payment.html?title=Game+Programming+Patterns&author=Robert+Nystrom&price=459.99&image=https://m.media-amazon.com/images/I/61efrLvvaxL.jpg&category=Programming"
+                                        class="btn btn-primary">Add to
+                                    Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="https://th.bing.com/th/id/OIP.j-DSHxav-NHFmilkfDXXiAHaHa?w=155&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                                class="card-img-top"
+                                alt="Ansible for DevOps">
+                        <div class="card-body">
+                            <h5 class="card-title">Ansible for
+                                DevOps</h5>
+                            <p class="card-text">Ansible for DevOps is a
+                                book by Jeff Geerling that teaches
+                                configuration management and automation
+                                using Ansible. It covers topics like
+                                playbooks, roles, and best
+                                practices.</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    809.99</h5>
+                                <a
+                                        href="payment.html?title=Ansible+for+DevOps&author=Jeff+Geerling&price=809.99&image=https://th.bing.com/th/id/OIP.j-DSHxav-NHFmilkfDXXiAHaHa?w=155&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7&category=DevOps"
+                                        class="btn btn-primary">Add to
+                                    Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="https://th.bing.com/th/id/OIP.WCYIvVKFCECYZt_ubqvX-wHaJv?w=156&h=200&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                                class="card-img-top" alt="Deep Learning">
+                        <div class="card-body">
+                            <h5 class="card-title">Deep Learning</h5>
+                            <p class="card-text">Deep Learning is a book
+                                by Ian Goodfellow, Yoshua Bengio, and
+                                Aaron Courville that provides a
+                                comprehensive introduction to deep
+                                learning techniques and
+                                applications.</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    809.99</h5>
+                                <a
+                                        href="payment.html?title=Deep+Learning&author=Ian+Goodfellow%2C+Yoshua+Bengio%2C+Aaron+Courville&price=809.99&image=https://th.bing.com/th/id/OIP.WCYIvVKFCECYZt_ubqvX-wHaJv?w=156&h=200&c=7&r=0&o=5&dpr=1.3&pid=1.7&category=Machine+Learning"
+                                        class="btn btn-primary">Add to
+                                    Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fiction Books Section -->
+    <section id="fiction" class="category-section">
+        <div class="container">
+            <h2 class="section-title">Fiction Books</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
+                <!-- Book 1 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="./img/To kill a mokking bird.jpg"
+                             class="card-img-top"
+                             alt="To Kill a Mockingbird">
+                        <div class="card-body">
+                            <h5 class="card-title">To Kill a
+                                Mockingbird</h5>
+                            <p class="card-text">A classic novel about
+                                racial injustice and moral growth in the
+                                American South, seen through the eyes of
+                                young Scout Finch.</p>
+                            <p class="text-muted">by Harper Lee</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1200.00</h5>
+                                <a
+                                        href="payment.jsp?title=To+Kill+a+Mockingbird&author=Harper+Lee&price=1200.00&image=./img/To kill a mokking bird.jpg&category=Fiction"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The nightngale.jpg"
+                                class="card-img-top" alt="1984">
+                        <div class="card-body">
+                            <h5 class="card-title">The Nightngale</h5>
+                            <p class="card-text">A gripping World War II
+                                story about two sisters in Nazi-occupied
+                                France, highlighting the strength and
+                                resilience of women during war</p>
+                            <p class="text-muted">Kristin Hannah</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1100.00</h5>
+                                <a
+                                        href="payment.html?title=The+Nightingale&author=Kristin+Hannah&price=1100.00&image=C:\Users\user\Desktop\OOP web page\img\The nightngale.jpg&category=Fiction"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The great gatsby.jpg"
+                                class="card-img-top" alt="The Great Gatsby">
+                        <div class="card-body">
+                            <h5 class="card-title">The Great Gatsby</h5>
+                            <p class="card-text">A tale of wealth, love,
+                                and the American Dream in the Roaring
+                                Twenties, centered around the mysterious
+                                Jay Gatsby.</p>
+                            <p class="text-muted">by F. Scott
+                                Fitzgerald</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    950.00</h5>
+                                <a
+                                        href="payment.html?title=The+Great+Gatsby&author=F.+Scott+Fitzgerald&price=950.00&image=C:\Users\user\Desktop\OOP web page\img\The great gatsby.jpg&category=Fiction"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Pride and prejudice.jpg"
+                                class="card-img-top"
+                                alt="Pride and Prejudice">
+                        <div class="card-body">
+                            <h5 class="card-title">Pride and
+                                Prejudice</h5>
+                            <p class="card-text">A romantic novel
+                                following Elizabeth Bennet as she
+                                navigates societal expectations and her
+                                growing feelings for Mr. Darcy.</p>
+                            <p class="text-muted">by Jane Austen</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    850.00</h5>
+                                <a
+                                        href="payment.html?title=Pride+and+Prejudice&author=Jane+Austen&price=850.00&image=C:\Users\user\Desktop\OOP web page\img\Pride and prejudice.jpg&category=Fiction"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 5 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The catcher in the rye.jpg"
+                                class="card-img-top"
+                                alt="The Catcher in the Rye">
+                        <div class="card-body">
+                            <h5 class="card-title">The Catcher in the
+                                Rye</h5>
+                            <p class="card-text">A coming-of-age story
+                                about Holden Caulfield's struggles with
+                                adolescence, identity, and societal
+                                hypocrisy.</p>
+                            <p class="text-muted">by J.D. Salinger</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    900.00</h5>
+                                <a
+                                        href="payment.html?title=The+Catcher+in+the+Rye&author=J.D.+Salinger&price=900.00&image=C:\Users\user\Desktop\OOP web page\img\The catcher in the rye.jpg&category=Fiction"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second row of Fiction Books -->
+            <div
+                    class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4 mt-2">
+                <!-- Book 6 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The hobbit.jpg"
+                                class="card-img-top" alt="The Hobbit">
+                        <div class="card-body">
+                            <h5 class="card-title">The Hobbit</h5>
+                            <p class="card-text">A fantasy adventure
+                                where Bilbo Baggins embarks on a quest
+                                to reclaim a dwarf kingdom, encountering
+                                dragons and magic.</p>
+                            <p class="text-muted">by J.R.R. Tolkien</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1300.00</h5>
+                                <a
+                                        href="payment.html?title=The+Hobbit&author=J.R.R.+Tolkien&price=1300.00&image=C:\Users\user\Desktop\OOP web page\img\The hobbit.jpg&category=Fantasy"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 7 -->
+                <!-- Harry Potter and the Sorcerer's Stone (Book 1) -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Harry potter 1.1.jpg"
+                                class="card-img-top"
+                                alt="Harry Potter and the Sorcerer's Stone">
+                        <div class="card-body">
+                            <h5 class="card-title">Harry Potter and the
+                                Sorcerer's Stone</h5>
+                            <p class="card-text">The first book in the
+                                Harry Potter series, introducing a young
+                                wizard's journey into the magical world
+                                of Hogwarts.</p>
+                            <p class="text-muted">by J.K. Rowling</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1500.00</h5>
+                                <a
+                                        href="payment.html?title=Harry+Potter+and+the+Sorcerer%27s+Stone&author=J.K.+Rowling&price=1500.00&image=C:\Users\user\Desktop\OOP web page\img\Harry potter 1.1.jpg&category=Fantasy"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Harry Potter and the Chamber of Secrets (Book 2) -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Harry potter 2.jpg"
+                                class="card-img-top"
+                                alt="Harry Potter and the Chamber of Secrets">
+                        <div class="card-body">
+                            <h5 class="card-title">Harry Potter and the
+                                Chamber of Secrets</h5>
+                            <p class="card-text">Harry's second year at
+                                Hogwarts as the Heir of Slytherin opens
+                                the Chamber of Secrets.</p>
+                            <p class="text-muted">by J.K. Rowling</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1550.00</h5>
+                                <a
+                                        href="payment.html?title=Harry+Potter+and+the+Chamber+of+Secrets&author=J.K.+Rowling&price=1550.00&image=C:\Users\user\Desktop\OOP web page\img\Harry potter 2.jpg&category=Fantasy"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Harry Potter and the Prisoner of Azkaban (Book 3) -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Harry potter 3.jpg"
+                                class="card-img-top"
+                                alt="Harry Potter and the Prisoner of Azkaban">
+                        <div class="card-body">
+                            <h5 class="card-title">Harry Potter and the
+                                Prisoner of Azkaban</h5>
+                            <p class="card-text">Harry learns about
+                                Sirius Black, his dangerous godfather
+                                who escaped from Azkaban prison.</p>
+                            <p class="text-muted">by J.K. Rowling</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1600.00</h5>
+                                <a
+                                        href="payment.html?title=Harry+Potter+and+the+Prisoner+of+Azkaban&author=J.K.+Rowling&price=1600.00&image=C:\Users\user\Desktop\OOP web page\img\Harry potter 3.jpg&category=Fantasy"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Harry Potter and the Goblet of Fire (Book 4) -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Harry potter 4.jpg"
+                                class="card-img-top"
+                                alt="Harry Potter and the Goblet of Fire">
+                        <div class="card-body">
+                            <h5 class="card-title">Harry Potter and the
+                                Goblet of Fire</h5>
+                            <p class="card-text">Harry competes in the
+                                dangerous Triwizard Tournament while
+                                dark forces gather.</p>
+                            <p class="text-muted">by J.K. Rowling</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1700.00</h5>
+                                <a
+                                        href="payment.html?title=Harry+Potter+and+the+Goblet+of+Fire&author=J.K.+Rowling&price=1700.00&image=C:\Users\user\Desktop\OOP web page\img\Harry potter 4.jpg&category=Fantasy"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Harry Potter and the Order of the Phoenix (Book 5) -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Harry potter 5.jpg"
+                                class="card-img-top"
+                                alt="Harry Potter and the Order of the Phoenix">
+                        <div class="card-body">
+                            <h5 class="card-title">Harry Potter and the
+                                Order of the Phoenix</h5>
+                            <p class="card-text">Harry forms
+                                Dumbledore's Army and learns about the
+                                prophecy concerning him and
+                                Voldemort.</p>
+                            <p class="text-muted">by J.K. Rowling</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1800.00</h5>
+                                <a
+                                        href="payment.html?title=Harry+Potter+and+the+Order+of+the+Phoenix&author=J.K.+Rowling&price=1800.00&image=C:\Users\user\Desktop\OOP web page\img\Harry potter 5.jpg&category=Fantasy"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Harry Potter and the Half-Blood Prince (Book 6) -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Harry potter 6.jpg"
+                                class="card-img-top"
+                                alt="Harry Potter and the Half-Blood Prince">
+                        <div class="card-body">
+                            <h5 class="card-title">Harry Potter and the
+                                Half-Blood Prince</h5>
+                            <p class="card-text">Harry learns about
+                                Voldemort's past while Draco Malfoy
+                                works on a mysterious mission.</p>
+                            <p class="text-muted">by J.K. Rowling</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1850.00</h5>
+                                <a
+                                        href="payment.html?title=Harry+Potter+and+the+Half-Blood+Prince&author=J.K.+Rowling&price=1850.00&image=C:\Users\user\Desktop\OOP web page\img\Harry potter 6.jpg&category=Fantasy"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Harry Potter and the Deathly Hallows (Book 7) -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Harry potter 7.jpg"
+                                class="card-img-top"
+                                alt="Harry Potter and the Deathly Hallows">
+                        <div class="card-body">
+                            <h5 class="card-title">Harry Potter and the
+                                Deathly Hallows</h5>
+                            <p class="card-text">The final battle
+                                between Harry and Voldemort as Harry
+                                searches for Horcruxes.</p>
+                            <p class="text-muted">by J.K. Rowling</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1900.00</h5>
+                                <a
+                                        href="payment.html?title=Harry+Potter+and+the+Deathly+Hallows&author=J.K.+Rowling&price=1900.00&image=C:\Users\user\Desktop\OOP web page\img\Harry potter 7.jpg&category=Fantasy"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 8 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The alchemist.jpg"
+                                class="card-img-top" alt="The Alchemist">
+                        <div class="card-body">
+                            <h5 class="card-title">The Alchemist</h5>
+                            <p class="card-text">A philosophical novel
+                                about a shepherd's journey to find his
+                                personal legend and the treasures of
+                                life.</p>
+                            <p class="text-muted">by Paulo Coelho</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    800.00</h5>
+                                <a
+                                        href="payment.html?title=The+Alchemist&author=Paulo+Coelho&price=800.00&image=C:\Users\user\Desktop\OOP web page\img\The alchemist.jpg&category=Fiction"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 9 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The load of the Rings.jpg"
+                                class="card-img-top"
+                                alt="The Lord of the Rings">
+                        <div class="card-body">
+                            <h5 class="card-title">The Lord of the
+                                Rings</h5>
+                            <p class="card-text">An epic fantasy trilogy
+                                about Frodo Baggins' quest to destroy
+                                the One Ring and save Middle-earth from
+                                darkness.</p>
+                            <p class="text-muted">by J.R.R. Tolkien</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    2500.00</h5>
+                                <a
+                                        href="payment.html?title=The+Lord+of+the+Rings&author=J.R.R.+Tolkien&price=2500.00&image=C:\Users\user\Desktop\OOP web page\img\The load of the Rings.jpg&category=Fantasy"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </section>
+
+    <!-- Science Fiction & Fantasy Section -->
+    <section id="scifi" class="category-section">
+        <div class="container">
+            <h2 class="section-title">Science Fiction &
+                Fantasy</h2>
+            <div
+                    class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
+                <!-- Book 1 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Dune.jpg"
+                                class="card-img-top" alt="Dune">
+                        <div class="card-body">
+                            <h5 class="card-title">Dune</h5>
+                            <p class="card-text">A sci-fi
+                                masterpiece about politics,
+                                religion, and survival on the
+                                desert planet Arrakis, home to
+                                the spice melange.</p>
+                            <p class="text-muted">by Frank
+                                Herbert</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1800.00</h5>
+                                <a
+                                        href="payment.html?title=Dune&author=Frank+Herbert&price=1800.00&image=C:\Users\user\Desktop\OOP web page\img\Dune.jpg&category=Sci-Fi"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Neuromancer.jpg"
+                                class="card-img-top"
+                                alt="Neuromancer">
+                        <div class="card-body">
+                            <h5
+                                    class="card-title">Neuromancer</h5>
+                            <p class="card-text">A cyberpunk
+                                novel following a hacker hired
+                                for a dangerous mission in a
+                                world of artificial intelligence
+                                and virtual reality.</p>
+                            <p class="text-muted">by William
+                                Gibson</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1400.00</h5>
+                                <a
+                                        href="payment.html?title=Neuromancer&author=William+Gibson&price=1400.00&image=C:\Users\user\Desktop\OOP web page\img\Neuromancer.jpg&category=Sci-Fi"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Ender's game.jpg"
+                                class="card-img-top"
+                                alt="Ender's Game">
+                        <div class="card-body">
+                            <h5 class="card-title">Ender's
+                                Game</h5>
+                            <p class="card-text">A young boy
+                                trains in a military academy to
+                                fight an alien species, unaware
+                                of the true nature of his final
+                                test.</p>
+                            <p class="text-muted">by Orson Scott
+                                Card</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1200.00</h5>
+                                <a
+                                        href="payment.html?title=Ender%27s+Game&author=Orson+Scott+Card&price=1200.00&image=C:\Users\user\Desktop\OOP web page\img\Ender's game.jpg&category=Sci-Fi"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The martian.jpg"
+                                class="card-img-top"
+                                alt="The Martian">
+                        <div class="card-body">
+                            <h5 class="card-title">The
+                                Martian</h5>
+                            <p class="card-text">An astronaut
+                                stranded on Mars must use his
+                                ingenuity to survive while
+                                awaiting rescue.</p>
+                            <p class="text-muted">by Andy
+                                Weir</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1300.00</h5>
+                                <a
+                                        href="payment.html?title=The+Martian&author=Andy+Weir&price=1300.00&image=C:\Users\user\Desktop\OOP web page\img\The martian.jpg&category=Sci-Fi"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 5 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Brave new world.jpg"
+                                class="card-img-top"
+                                alt="Brave New World">
+                        <div class="card-body">
+                            <h5 class="card-title">Brave New
+                                World</h5>
+                            <p class="card-text">A dystopian
+                                future where society is
+                                controlled through pleasure,
+                                conditioning, and the absence of
+                                free will.</p>
+                            <p class="text-muted">by Aldous
+                                Huxley</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1100.00</h5>
+                                <a
+                                        href="payment.html?title=Brave+New+World&author=Aldous+Huxley&price=1100.00&image=C:\Users\user\Desktop\OOP web page\img\Brave new world.jpg&category=Dystopian"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second row of Sci-Fi Books -->
+            <div
+                    class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4 mt-2">
+                <!-- Book 6 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The hunger games.jpg"
+                                class="card-img-top"
+                                alt="The Hunger Games">
+                        <div class="card-body">
+                            <h5 class="card-title">The Hunger
+                                Games</h5>
+                            <p class="card-text">In a dystopian
+                                future, teenagers are forced to
+                                fight to the death in a
+                                televised event as punishment
+                                for rebellion.</p>
+                            <p class="text-muted">by Suzanne
+                                Collins</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1250.00</h5>
+                                <a
+                                        href="payment.html?title=The+Hunger+Games&author=Suzanne+Collins&price=1250.00&image=C:\Users\user\Desktop\OOP web page\img\The hunger games.jpg&category=Sci-Fi"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 7 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The name of the wind.jpg"
+                                class="card-img-top"
+                                alt="The Name of the Wind">
+                        <div class="card-body">
+                            <h5 class="card-title">The Name of
+                                the Wind</h5>
+                            <p class="card-text">The first book
+                                in the Kingkiller Chronicle,
+                                following Kvothe's journey from
+                                a gifted child to a legendary
+                                figure.</p>
+                            <p class="text-muted">by Patrick
+                                Rothfuss</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1400.00</h5>
+                                <a
+                                        href="payment.html?title=The+Name+of+the+Wind&author=Patrick+Rothfuss&price=1400.00&image=C:\Users\user\Desktop\OOP web page\img\The name of the wind.jpg&category=Fantasy"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 8 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Fahrenheit 451.png"
+                                class="card-img-top"
+                                alt="Fahrenheit 451">
+                        <div class="card-body">
+                            <h5 class="card-title">Fahrenheit
+                                451</h5>
+                            <p class="card-text">A future where
+                                books are banned, and firemen
+                                burn them, until one man begins
+                                to question the system.</p>
+                            <p class="text-muted">by Ray
+                                Bradbury</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    950.00</h5>
+                                <a
+                                        href="payment.html?title=Fahrenheit+451&author=Ray+Bradbury&price=950.00&image=C:\Users\user\Desktop\OOP web page\img\Fahrenheit 451.png&category=Sci-Fi"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 9 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The hand maid's tale.jpg"
+                                class="card-img-top"
+                                alt="The Handmaid's Tale">
+                        <div class="card-body">
+                            <h5 class="card-title">The
+                                Handmaid's Tale</h5>
+                            <p class="card-text">A dystopian
+                                novel where women are oppressed,
+                                and a handmaid struggles for
+                                survival in a theocratic
+                                regime.</p>
+                            <p class="text-muted">by Margaret
+                                Atwood</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1200.00</h5>
+                                <a
+                                        href="payment.html?title=The+Handmaid%27s+Tale&author=Margaret+Atwood&price=1200.00&image=C:\Users\user\Desktop\OOP web page\img\The hand maid's tale.jpg&category=Dystopian"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 10 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Game of thrones.jpg"
+                                class="card-img-top"
+                                alt="A Game of Thrones">
+                        <div class="card-body">
+                            <h5 class="card-title">A Game of
+                                Thrones</h5>
+                            <p class="card-text">The first book
+                                in the A Song of Ice and Fire
+                                series, filled with political
+                                intrigue, war, and dark
+                                magic.</p>
+                            <p class="text-muted">by George R.R.
+                                Martin</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1600.00</h5>
+                                <a
+                                        href="payment.html?title=A+Game+of+Thrones&author=George+R.R.+Martin&price=1600.00&image=C:\Users\user\Desktop\OOP web page\img\Game of thrones.jpg&category=Fantasy"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mystery & Thriller Section -->
+    <section id="mystery" class="category-section">
+        <div class="container">
+            <h2 class="section-title">Mystery & Thriller</h2>
+            <div
+                    class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
+                <!-- Book 1 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The girl with the dragon tattoo.jpg"
+                                class="card-img-top"
+                                alt="The Girl with the Dragon Tattoo">
+                        <div class="card-body">
+                            <h5 class="card-title">The Girl with
+                                the Dragon Tattoo</h5>
+                            <p class="card-text">A journalist
+                                and a hacker investigate a
+                                decades-old disappearance,
+                                uncovering dark family
+                                secrets.</p>
+                            <p class="text-muted">by Stieg
+                                Larsson</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1350.00</h5>
+                                <a
+                                        href="payment.html?title=The+Girl+with+the+Dragon+Tattoo&author=Stieg+Larsson&price=1350.00&image=C:\Users\user\Desktop\OOP web page\img\The girl with the dragon tattoo.jpg&category=Mystery"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Gone girl.jpg"
+                                class="card-img-top"
+                                alt="Gone Girl">
+                        <div class="card-body">
+                            <h5 class="card-title">Gone
+                                Girl</h5>
+                            <p class="card-text">A psychological
+                                thriller about a missing wife
+                                and the husband who becomes the
+                                prime suspect in her
+                                disappearance.</p>
+                            <p class="text-muted">by Gillian
+                                Flynn</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1250.00</h5>
+                                <a
+                                        href="payment.html?title=Gone+Girl&author=Gillian+Flynn&price=1250.00&image=C:\Users\user\Desktop\OOP web page\img\Gone girl.jpg&category=Thriller"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The davinci code.jpg"
+                                class="card-img-top"
+                                alt="The Da Vinci Code">
+                        <div class="card-body">
+                            <h5 class="card-title">The Da Vinci
+                                Code</h5>
+                            <p class="card-text">A symbologist
+                                and a cryptologist unravel a
+                                conspiracy involving the Holy
+                                Grail and secret societies.</p>
+                            <p class="text-muted">by Dan
+                                Brown</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1100.00</h5>
+                                <a
+                                        href="payment.html?title=The+Da+Vinci+Code&author=Dan+Brown&price=1100.00&image=C:\Users\user\Desktop\OOP web page\img\The davinci code.jpg&category=Mystery"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\A study in scarlet.jpg"
+                                class="card-img-top"
+                                alt="Sherlock Holmes: A Study in Scarlet">
+                        <div class="card-body">
+                            <h5 class="card-title">Sherlock
+                                Holmes: A Study in Scarlet</h5>
+                            <p class="card-text">The first
+                                Sherlock Holmes novel,
+                                introducing the detective and
+                                his brilliant deductive
+                                methods.</p>
+                            <p class="text-muted">by Arthur
+                                Conan Doyle</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    900.00</h5>
+                                <a
+                                        href="payment.html?title=Sherlock+Holmes%3A+A+Study+in+Scarlet&author=Arthur+Conan+Doyle&price=900.00&image=C:\Users\user\Desktop\OOP web page\img\A study in scarlet.jpg&category=Mystery"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 5 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\And then there were none.jpg"
+                                class="card-img-top"
+                                alt="And Then There Were None">
+                        <div class="card-body">
+                            <h5 class="card-title">And Then
+                                There Were None</h5>
+                            <p class="card-text">Ten strangers
+                                are invited to an island, only
+                                to be killed one by one in this
+                                classic mystery.</p>
+                            <p class="text-muted">by Agatha
+                                Christie</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    850.00</h5>
+                                <a
+                                        href="payment.html?title=And+Then+There+Were+None&author=Agatha+Christie&price=850.00&image=C:\Users\user\Desktop\OOP web page\img\And then there were none.jpg&category=Mystery"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second row of Mystery Books -->
+            <div
+                    class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4 mt-2">
+                <!-- Book 6 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The silent patient.jpg"
+                                class="card-img-top"
+                                alt="The Silent Patient">
+                        <div class="card-body">
+                            <h5 class="card-title">The Silent
+                                Patient</h5>
+                            <p class="card-text">A woman shoots
+                                her husband and then stops
+                                speaking; a psychotherapist
+                                tries to uncover the truth.</p>
+                            <p class="text-muted">by Alex
+                                Michaelides</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1200.00</h5>
+                                <a
+                                        href="payment.html?title=The+Silent+Patient&author=Alex+Michaelides&price=1200.00&image=C:\Users\user\Desktop\OOP web page\img\The silent patient.jpg&category=Thriller"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 7 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The hound of the baskervilles.jpg"
+                                class="card-img-top"
+                                alt="The Hound of the Baskervilles">
+                        <div class="card-body">
+                            <h5 class="card-title">The Hound of
+                                the Baskervilles</h5>
+                            <p class="card-text">Sherlock Holmes
+                                investigates a supernatural
+                                hound haunting the Baskerville
+                                family.</p>
+                            <p class="text-muted">by Arthur
+                                Conan Doyle</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    950.00</h5>
+                                <a
+                                        href="payment.html?title=The+Hound+of+the+Baskervilles&author=Arthur+Conan+Doyle&price=950.00&image=C:\Users\user\Desktop\OOP web page\img\The hound of the baskervilles.jpg&category=Mystery"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 8 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\sharp objects.jpg"
+                                class="card-img-top"
+                                alt="Sharp Objects">
+                        <div class="card-body">
+                            <h5 class="card-title">Sharp
+                                Objects</h5>
+                            <p class="card-text">A journalist
+                                returns to her hometown to cover
+                                a murder, confronting her own
+                                traumatic past.</p>
+                            <p class="text-muted">by Gillian
+                                Flynn</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1100.00</h5>
+                                <a
+                                        href="payment.html?title=Sharp+Objects&author=Gillian+Flynn&price=1100.00&image=C:\Users\user\Desktop\OOP web page\img\sharp objects.jpg&category=Thriller"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 9 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The girl on the train.jpg"
+                                class="card-img-top"
+                                alt="The Girl on the Train">
+                        <div class="card-body">
+                            <h5 class="card-title">The Girl on
+                                the Train</h5>
+                            <p class="card-text">A woman becomes
+                                entangled in a missing person
+                                investigation after witnessing
+                                something from a train.</p>
+                            <p class="text-muted">by Paula
+                                Hawkins</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1050.00</h5>
+                                <a
+                                        href="payment.html?title=The+Girl+on+the+Train&author=Paula+Hawkins&price=1050.00&image=C:\Users\user\Desktop\OOP web page\img\The girl on the train.jpg&category=Thriller"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 10 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\In cold blood.jpg"
+                                class="card-img-top"
+                                alt="In Cold Blood">
+                        <div class="card-body">
+                            <h5 class="card-title">In Cold
+                                Blood</h5>
+                            <p class="card-text">A true crime
+                                novel detailing the brutal
+                                murder of a Kansas family and
+                                the investigation that
+                                followed.</p>
+                            <p class="text-muted">by Truman
+                                Capote</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1150.00</h5>
+                                <a
+                                        href="payment.html?title=In+Cold+Blood&author=Truman+Capote&price=1150.00&image=C:\Users\user\Desktop\OOP web page\img\In cold blood.jpg&category=True+Crime"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Non-Fiction & Self-Help Section -->
+    <section id="nonfiction" class="category-section">
+        <div class="container">
+            <h2 class="section-title">Non-Fiction &
+                Self-Help</h2>
+            <div
+                    class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
+                <!-- Book 1 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Sapiens.jpg"
+                                class="card-img-top"
+                                alt="Sapiens: A Brief History of Humankind">
+                        <div class="card-body">
+                            <h5 class="card-title">Sapiens: A
+                                Brief History of Humankind</h5>
+                            <p class="card-text">Explores the
+                                history of Homo sapiens, from
+                                evolution to modern
+                                civilization, in an engaging
+                                narrative.</p>
+                            <p class="text-muted">by Yuval Noah
+                                Harari</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1600.00</h5>
+                                <a
+                                        href="payment.html?title=Sapiens&author=Yuval+Noah+Harari&price=1600.00&image=C:\Users\user\Desktop\OOP web page\img\Sapiens.jpg&category=History"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Atomic Habits.jpg"
+                                class="card-img-top"
+                                alt="Atomic Habits">
+                        <div class="card-body">
+                            <h5 class="card-title">Atomic
+                                Habits</h5>
+                            <p class="card-text">A guide to
+                                building good habits and
+                                breaking bad ones through small,
+                                incremental changes.</p>
+                            <p class="text-muted">by James
+                                Clear</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1200.00</h5>
+                                <a
+                                        href="payment.html?title=Atomic+Habits&author=James+Clear&price=1200.00&image=C:\Users\user\Desktop\OOP web page\img\Atomic Habits.jpg&category=Self-Help"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Light we cannot see.jpg"
+                                class="card-img-top"
+                                alt="The Subtle Art of Not Giving a F*ck">
+                        <div class="card-body">
+                            <h5 class="card-title">All the light
+                                we cannot see</h5>
+                            <p class="card-text">A beautifully
+                                written novel following a blind
+                                French girl and a German soldier
+                                whose lives intersect during
+                                World War II</p>
+                            <p class="text-muted">by Mark
+                                Manson</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1100.00</h5>
+                                <a
+                                        href="payment.html?title=All+the+Light+We+Cannot+See&author=Anthony+Doerr&price=1100.00&image=C:\Users\user\Desktop\OOP web page\img\Light we cannot see.jpg&category=Historical+Fiction"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Becoming.jpg"
+                                class="card-img-top" alt="Becoming">
+                        <div class="card-body">
+                            <h5 class="card-title">Becoming</h5>
+                            <p class="card-text">A memoir by the
+                                former First Lady, sharing her
+                                journey from childhood to the
+                                White House.</p>
+                            <p class="text-muted">by Michelle
+                                Obama</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1400.00</h5>
+                                <a
+                                        href="payment.html?title=Becoming&author=Michelle+Obama&price=1400.00&image=C:\Users\user\Desktop\OOP web page\img\Becoming.jpg&category=Memoir"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 5 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The power of now.jpg"
+                                class="card-img-top"
+                                alt="The Power of Now">
+                        <div class="card-body">
+                            <h5 class="card-title">The Power of
+                                Now</h5>
+                            <p class="card-text">A spiritual
+                                guide emphasizing mindfulness
+                                and living in the present
+                                moment.</p>
+                            <p class="text-muted">by Eckhart
+                                Tolle</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    950.00</h5>
+                                <a
+                                        href="payment.html?title=The+Power+of+Now&author=Eckhart+Tolle&price=950.00&image=C:\Users\user\Desktop\OOP web page\img\The power of now.jpg&category=Spirituality"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second row of Non-Fiction Books -->
+            <div
+                    class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4 mt-2">
+                <!-- Book 6 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Quiet power.jpg"
+                                class="card-img-top"
+                                alt="Quiet: The Power of Introverts">
+                        <div class="card-body">
+                            <h5 class="card-title">Quiet: The
+                                Power of Introverts</h5>
+                            <p class="card-text">Explores the
+                                strengths of introverts in a
+                                world that often values
+                                extroversion.</p>
+                            <p class="text-muted">by Susan
+                                Cain</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1150.00</h5>
+                                <a
+                                        href="payment.html?title=Quiet%3A+The+Power+of+Introverts&author=Susan+Cain&price=1150.00&image=C:\Users\user\Desktop\OOP web page\img\Quiet power.jpg&category=Psychology"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 7 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Thinking, fast and slow.jpg"
+                                class="card-img-top"
+                                alt="Thinking, Fast and Slow">
+                        <div class="card-body">
+                            <h5 class="card-title">Thinking,
+                                Fast and Slow</h5>
+                            <p class="card-text">A deep dive
+                                into human decision-making,
+                                explaining the two systems that
+                                drive our thoughts.</p>
+                            <p class="text-muted">by Daniel
+                                Kahneman</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1300.00</h5>
+                                <a
+                                        href="payment.html?title=Thinking%2C+Fast+and+Slow&author=Daniel+Kahneman&price=1300.00&image=C:\Users\user\Desktop\OOP web page\img\Thinking, fast and slow.jpg&category=Psychology"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 8 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The 7 habits of highly efective people.jpg"
+                                class="card-img-top"
+                                alt="The 7 Habits of Highly Effective People">
+                        <div class="card-body">
+                            <h5 class="card-title">The 7 Habits
+                                of Highly Effective People</h5>
+                            <p class="card-text">A
+                                self-improvement book outlining
+                                principles for personal and
+                                professional success.</p>
+                            <p class="text-muted">by Stephen R.
+                                Covey</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1100.00</h5>
+                                <a
+                                        href="payment.html?title=The+7+Habits+of+Highly+Effective+People&author=Stephen+Covey&price=1100.00&image=C:\Users\user\Desktop\OOP web page\img\The 7 habits of highly efective people.jpg&category=Self-Help"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 9 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Educated tara westover.jpg"
+                                class="card-img-top" alt="Educated">
+                        <div class="card-body">
+                            <h5 class="card-title">Educated</h5>
+                            <p class="card-text">A memoir about
+                                a woman who grew up in a strict
+                                survivalist family but escaped
+                                to earn a PhD.</p>
+                            <p class="text-muted">by Tara
+                                Westover</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1250.00</h5>
+                                <a
+                                        href="payment.html?title=Educated&author=Tara+Westover&price=1250.00&image=C:\Users\user\Desktop\OOP web page\img\Educated tara westover.jpg&category=Memoir"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 10 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Man's seach for meaning.jpg"
+                                class="card-img-top"
+                                alt="Man's Search for Meaning">
+                        <div class="card-body">
+                            <h5 class="card-title">Man's Search
+                                for Meaning</h5>
+                            <p class="card-text">A Holocaust
+                                survivor's account of finding
+                                purpose in suffering through
+                                logotherapy.</p>
+                            <p class="text-muted">by Viktor E.
+                                Frankl</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1000.00</h5>
+                                <a
+                                        href="payment.html?title=Man%27s+Search+for+Meaning&author=Viktor+Frankl&price=1000.00&image=C:\Users\user\Desktop\OOP web page\img\Man's seach for meaning.jpg&category=Philosophy"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Classic Literature Section -->
+    <section id="classics" class="category-section">
+        <div class="container">
+            <h2 class="section-title">Classic Literature</h2>
+            <div
+                    class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
+                <!-- Book 1 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Moby dick.jpg"
+                                class="card-img-top"
+                                alt="Moby-Dick">
+                        <div class="card-body">
+                            <h5
+                                    class="card-title">Moby-Dick</h5>
+                            <p class="card-text">Captain Ahab's
+                                obsessive quest for revenge
+                                against the white whale,
+                                exploring themes of fate and
+                                obsession.</p>
+                            <p class="text-muted">by Herman
+                                Melville</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1500.00</h5>
+                                <a
+                                        href="payment.html?title=Moby-Dick&author=Herman+Melville&price=1500.00&image=images/moby-dick.jpg&category=Classic"
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 2 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Crime and Punishment.jpg"
+                                class="card-img-top"
+                                alt="Crime and Punishment">
+                        <div class="card-body">
+                            <h5 class="card-title">Crime and
+                                Punishment</h5>
+                            <p class="card-text">A psychological
+                                novel about a student who
+                                commits murder and grapples with
+                                guilt and redemption.</p>
+                            <p class="text-muted">by Fyodor
+                                Dostoevsky</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1300.00</h5>
+                                <button
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 3 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Anna Karenina.jpg"
+                                class="card-img-top"
+                                alt="Anna Karenina">
+                        <div class="card-body">
+                            <h5 class="card-title">Anna
+                                Karenina</h5>
+                            <p class="card-text">A tragic love
+                                story set in Russian high
+                                society, exploring themes of
+                                infidelity and societal
+                                norms.</p>
+                            <p class="text-muted">by Leo
+                                Tolstoy</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1400.00</h5>
+                                <button
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 4 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Wuthering heights.jpg"
+                                class="card-img-top"
+                                alt="Wuthering Heights">
+                        <div class="card-body">
+                            <h5 class="card-title">Wuthering
+                                Heights</h5>
+                            <p class="card-text">A dark, gothic
+                                tale of love and revenge between
+                                Heathcliff and Catherine on the
+                                Yorkshire moors.</p>
+                            <p class="text-muted">by Emily
+                                Brontë</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1200.00</h5>
+                                <button
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 5 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Frankenstein.jpg"
+                                class="card-img-top"
+                                alt="Frankenstein">
+                        <div class="card-body">
+                            <h5
+                                    class="card-title">Frankenstein</h5>
+                            <p class="card-text">A scientist
+                                creates a monstrous being,
+                                leading to tragedy in this
+                                foundational work of science
+                                fiction.</p>
+                            <p class="text-muted">by Mary
+                                Shelley</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1100.00</h5>
+                                <button
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second row of Classic Books -->
+            <div
+                    class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4 mt-2">
+                <!-- Book 6 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Dracula.jpg"
+                                class="card-img-top" alt="Dracula">
+                        <div class="card-body">
+                            <h5 class="card-title">Dracula</h5>
+                            <p class="card-text">The iconic
+                                vampire novel introducing Count
+                                Dracula and the battle to stop
+                                his reign of terror.</p>
+                            <p class="text-muted">by Bram
+                                Stoker</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1250.00</h5>
+                                <button
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 7 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Les Miserables.jpg"
+                                class="card-img-top"
+                                alt="Les Misérables">
+                        <div class="card-body">
+                            <h5 class="card-title">Les
+                                Misérables</h5>
+                            <p class="card-text">A sweeping
+                                historical novel about justice,
+                                love, and redemption in
+                                post-revolutionary France.</p>
+                            <p class="text-muted">by Victor
+                                Hugo</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1800.00</h5>
+                                <button
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 8 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\Don quixote of la mancha.jpg"
+                                class="card-img-top"
+                                alt="Don Quixote">
+                        <div class="card-body">
+                            <h5 class="card-title">Don
+                                Quixote</h5>
+                            <p class="card-text">A delusional
+                                nobleman sets out on chivalrous
+                                adventures in this satirical
+                                masterpiece.</p>
+                            <p class="text-muted">by Miguel de
+                                Cervantes</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1500.00</h5>
+                                <button
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 9 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\The oddyssey.jpg"
+                                class="card-img-top"
+                                alt="The Odyssey">
+                        <div class="card-body">
+                            <h5 class="card-title">The
+                                Odyssey</h5>
+                            <p class="card-text">The epic
+                                journey of Odysseus as he tries
+                                to return home after the Trojan
+                                War.</p>
+                            <p class="text-muted">by Homer</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    1300.00</h5>
+                                <button
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book 10 -->
+                <div class="col">
+                    <div class="card h-100">
+                        <img
+                                src="C:\Users\user\Desktop\OOP web page\img\War and peace.jpg"
+                                class="card-img-top"
+                                alt="War and Peace">
+                        <div class="card-body">
+                            <h5 class="card-title">War and
+                                Peace</h5>
+                            <p class="card-text">A monumental
+                                novel intertwining the lives of
+                                Russian aristocrats during the
+                                Napoleonic Wars.</p>
+                            <p class="text-muted">by Leo
+                                Tolstoy</p>
+                            <div
+                                    class="d-flex justify-content-between align-items-center mt-auto">
+                                <h5 class="text-primary mb-0">Rs
+                                    2000.00</h5>
+                                <button
+                                        class="btn btn-outline-primary">Add
+                                    to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!--Footer-->
+<div th:replace="fragment/footer :: footer"></div>
+
+
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<!-- Custom JS -->
+<script>
+    // Add active class to current page link and category links
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentPage = window.location.pathname.split('/').pop();
+        const navLinks = document.querySelectorAll('.nav-link');
+        const categoryLinks = document.querySelectorAll('.category-link');
+
+        // Set active nav link
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
+
+            link.addEventListener('click', function() {
+                navLinks.forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Smooth scrolling for category links
+        categoryLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Remove active class from all category links
+                categoryLinks.forEach(l => l.classList.remove('active'));
+
+                // Add active class to clicked link
+                this.classList.add('active');
+
+                // Scroll to the target section
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
